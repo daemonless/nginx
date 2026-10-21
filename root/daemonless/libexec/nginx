@@ -1,0 +1,8 @@
+#!/bin/sh
+# nginx in the foreground. On a FreeBSD 14 kernel, preload the setgroups shim:
+# the master's drop to bsd calls setgroups@FBSD_1.8, which 14 lacks.
+if [ "$(uname -r | cut -d. -f1)" -lt 15 ] 2>/dev/null; then
+	export LD_PRELOAD=/usr/local/lib/libfbsd14compat.so
+fi
+# -e: the built-in error log path is opened before nginx.conf is read.
+exec /usr/local/sbin/nginx -e stderr -g 'daemon off;' "$@"

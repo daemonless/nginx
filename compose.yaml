@@ -1,0 +1,46 @@
+name: nginx
+
+x-daemonless:
+  title: "Nginx"
+  icon: ":simple-nginx:"
+  category: "Infrastructure"
+  description: "Nginx web server on base-exec: serves a site, or fronts another container in a stack. Logs go to the container's output."
+  license: "BSD-2-Clause"
+  repo_url: "https://github.com/daemonless/nginx"
+  upstream_url: "https://github.com/nginx/nginx"
+  web_url: "https://nginx.org/"
+  freshports_url: "https://www.freshports.org/www/nginx/"
+  user: "bsd"
+  mlock: false
+  appjail: true
+  community: "Discord:https://discord.gg/Kb9tkhecZT"
+
+  docs:
+    env:
+      PUID: "User ID the worker processes run as"
+      PGID: "Group ID the worker processes run as"
+      TZ: "Timezone for the container"
+    volumes:
+      /usr/local/www/html: "Site files"
+      /usr/local/etc/nginx/conf.d: "Extra server configs (*.conf)"
+    ports:
+      80: "HTTP"
+
+services:
+  nginx:
+    image: ghcr.io/daemonless/nginx:latest
+    container_name: nginx
+    # "always", not "unless-stopped": FreeBSD's podman rc.d only auto-starts
+    # containers with restart-policy=always at boot (needs podman_enable=YES).
+    restart: always
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/site:/usr/local/www/html:ro
+
+    ports:
+      - 80:80
