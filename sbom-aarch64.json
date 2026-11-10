@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-07T09:48:56Z",
+  "generated": "2026-11-10T08:38:15Z",
   "image": "nginx",
   "tags": {
     "pkg-aarch64": {
       "app_version": "1.30.6,3",
       "arch": "aarch64",
-      "generated": "2026-11-07T09:47:16Z",
+      "generated": "2026-11-10T08:36:37Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -315,7 +315,7 @@
     "pkg-latest-aarch64": {
       "app_version": "1.30.6_10,3",
       "arch": "aarch64",
-      "generated": "2026-11-07T09:47:21Z",
+      "generated": "2026-11-10T08:36:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
