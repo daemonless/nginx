@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-18T00:52:27Z",
+  "generated": "2026-11-20T09:54:46Z",
   "image": "nginx",
   "tags": {
     "pkg-aarch64": {
       "app_version": "1.30.6,3",
       "arch": "aarch64",
-      "generated": "2026-11-18T00:50:19Z",
+      "generated": "2026-11-20T09:53:05Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -313,9 +313,9 @@
       }
     },
     "pkg-latest-aarch64": {
-      "app_version": "1.30.6_13,3",
+      "app_version": "1.30.6_18,3",
       "arch": "aarch64",
-      "generated": "2026-11-18T00:50:22Z",
+      "generated": "2026-11-20T09:53:09Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -576,7 +576,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.6_13,3"
+            "version": "1.30.6_18,3"
           },
           {
             "licenses": [
@@ -597,7 +597,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.9.0"
+            "version": "2.9.2"
           }
         ],
         "go": [],
